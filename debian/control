@@ -1,0 +1,15 @@
+Source: xivo-call-logs-client
+Section: python
+Priority: extra
+Maintainer: Wazo Maintainers <dev@wazo.community>
+Build-Depends: debhelper (>= 8), dh-python, python-all (>= 2.7), python-setuptools
+Standards-Version: 3.9.6
+X-Python-Version: >= 2.7
+
+Package: xivo-call-logs-client
+Architecture: all
+Section: python
+Depends: ${python:Depends}, ${misc:Depends}, xivo-lib-rest-client, python-requests, python-stevedore
+Description: xivo-call-logd client library in python
+ Wazo is a system based on a powerful IPBX, to bring an easy to
+ install solution for telephony and related services.

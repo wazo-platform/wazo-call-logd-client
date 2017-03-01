@@ -1,0 +1,8 @@
+setup.py
+xivo_call_logs_client/__init__.py
+xivo_call_logs_client/client.py
+xivo_call_logs_client.egg-info/PKG-INFO
+xivo_call_logs_client.egg-info/SOURCES.txt
+xivo_call_logs_client.egg-info/dependency_links.txt
+xivo_call_logs_client.egg-info/entry_points.txt
+xivo_call_logs_client.egg-info/top_level.txt

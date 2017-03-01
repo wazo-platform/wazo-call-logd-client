@@ -1,0 +1,5 @@
+xivo-call-logs-client (1.0-1) xivo-dev; urgency=low
+
+  * Initial release.
+
+ -- Sebastien Duthil <sduthil@wazo.community>  Wed, 01 Mar 2017 13:56:07 -0500

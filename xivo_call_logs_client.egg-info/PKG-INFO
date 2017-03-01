@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: xivo-call-logs-client
+Version: 1.0
+Summary: a simple client library for the xivo-call-logd HTTP interface
+Home-page: http://wazo.community
+Author: Wazo Authors
+Author-email: dev@wazo.community
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
