@@ -21,6 +21,7 @@ setup(
 
     entry_points={
         'call_logs_client.commands': [
+            'cdr = xivo_call_logs_client.commands.cdr:CDRCommand',
         ],
     }
 )
