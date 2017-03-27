@@ -10,6 +10,7 @@ from xivo_call_logs_client import Client
 
 c = Client('localhost', token='the-one-ring', verify_certificate=False)
 
+cdr = c.cdr.list()
 ```
 
 ## Tests
