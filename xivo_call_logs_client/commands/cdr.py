@@ -6,7 +6,10 @@ from xivo_call_logs_client.command import CallLogdCommand
 
 
 class CDRCommand(CallLogdCommand):
-    def list(self):
-        r = self.session.get(self._client.url('cdr'))
+    def list(self, **params):
+        if 'from_' in params:
+            params['from'] = params.pop('from_')
+
+        r = self.session.get(self._client.url('cdr'), params=params)
         self.raise_from_response(r)
         return r.json()
