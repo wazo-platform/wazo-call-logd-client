@@ -13,3 +13,11 @@ class CDRCommand(CallLogdCommand):
         r = self.session.get(self._client.url('cdr'), params=params)
         self.raise_from_response(r)
         return r.json()
+
+    def list_from_user(self, **params):
+        if 'from_' in params:
+            params['from'] = params.pop('from_')
+
+        r = self.session.get(self._client.url('users', 'me', 'cdr'), params=params)
+        self.raise_from_response(r)
+        return r.json()
