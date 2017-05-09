@@ -8,7 +8,11 @@ from requests import HTTPError
 class CallLogdError(HTTPError):
 
     def __init__(self, response):
-        body = response.json()
+        try:
+            body = response.json()
+        except ValueError:
+            raise InvalidCallLogdError()
+
         self.status_code = response.status_code
         try:
             self.message = body['message']
