@@ -10,9 +10,13 @@ from xivo_call_logs_client import Client
 
 c = Client('localhost', token='the-one-ring', verify_certificate=False)
 
-cdr = c.cdr.list()
+cdr = c.cdr.list(limit=10, offset=20)
 cdr = c.cdr.list_for_user(user_uuid='my-user')
 cdr = c.cdr.list_from_user()  # with user token only
+
+cdr = c.cdr.list_csv(limit=10, offset=20)
+cdr = c.cdr.list_for_user_csv(user_uuid='my-user')
+cdr = c.cdr.list_from_user_csv()  # with user token only
 ```
 
 ## Tests
