@@ -1,12 +1,15 @@
-Source: xivo-call-logs-client
+Source: wazo-call-logs-client
 Section: python
 Priority: extra
 Maintainer: Wazo Maintainers <dev@wazo.community>
 Build-Depends: debhelper (>= 8), dh-python, python-all (>= 2.7), python-setuptools
+Conflicts: xivo-call-logs-client
+Replaces: xivo-call-logs-client
+Provides: xivo-call-logs-client
 Standards-Version: 3.9.6
 X-Python-Version: >= 2.7
 
-Package: xivo-call-logs-client
+Package: wazo-call-logs-client
 Architecture: all
 Section: python
 Depends: ${python:Depends}, ${misc:Depends}, xivo-lib-rest-client, python-requests, python-stevedore
