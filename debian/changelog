@@ -1,4 +1,4 @@
-wazo-call-logs-client (1.0-2) xivo-dev; urgency=medium
+wazo-call-logd-client (1.0-2) wazo-dev; urgency=medium
 
   * s/xivo-call-logs/wazo-call-logs/
 

@@ -1,12 +1,12 @@
-xivo-call-logs-client
+wazo-call-logd-client
 ===================
 
-A python library to connect to xivo-call-logd. HTTPS is used by default. Certificates are verified by default. To disable certificate verification, use the verify_certificate argument when instantiating the client.
+A python library to connect to wazo-call-logd. HTTPS is used by default. Certificates are verified by default. To disable certificate verification, use the verify_certificate argument when instantiating the client.
 
 Usage:
 
 ```python
-from xivo_call_logs_client import Client
+from wazo_call_logd_client import Client
 
 c = Client('localhost', token='the-one-ring', verify_certificate=False)
 

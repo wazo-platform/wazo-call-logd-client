@@ -2,7 +2,7 @@
 # Copyright 2017 The Wazo Authors  (see AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0+
 
-from xivo_call_logs_client.command import CallLogdCommand
+from wazo_call_logd_client.command import CallLogdCommand
 
 
 class CDRCommand(CallLogdCommand):

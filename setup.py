@@ -7,10 +7,10 @@ from setuptools import setup
 from setuptools import find_packages
 
 setup(
-    name='xivo_call_logs_client',
+    name='wazo_call_logd_client',
     version='1.0',
 
-    description='a simple client library for the xivo-call-logd HTTP interface',
+    description='a simple client library for the wazo-call-logd HTTP interface',
 
     author='Wazo Authors',
     author_email='dev@wazo.community',
@@ -20,8 +20,8 @@ setup(
     packages=find_packages(),
 
     entry_points={
-        'call_logs_client.commands': [
-            'cdr = xivo_call_logs_client.commands.cdr:CDRCommand',
+        'wazo_call_logd_client.commands': [
+            'cdr = wazo_call_logd_client.commands.cdr:CDRCommand',
         ],
     }
 )

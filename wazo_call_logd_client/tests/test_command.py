@@ -23,7 +23,7 @@ SOME_ERROR_BODY = {
 
 class TestCallLogdCommand(TestCase):
 
-    @patch('xivo_call_logs_client.command.HTTPCommand.raise_from_response')
+    @patch('wazo_call_logd_client.command.HTTPCommand.raise_from_response')
     def test_raise_from_response_no_error(self, parent_raise):
         response = Mock(status_code=200)
         response.json.return_value = {}
