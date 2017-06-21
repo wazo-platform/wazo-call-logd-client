@@ -7,7 +7,7 @@ from xivo_lib_rest_client.client import BaseClient
 
 class Client(BaseClient):
 
-    namespace = 'call_logs_client.commands'
+    namespace = 'wazo_call_logd_client.commands'
 
     def __init__(self,
                  host,
