@@ -17,6 +17,9 @@ cdr = c.cdr.list_from_user()  # with user token only
 cdr = c.cdr.list_csv(limit=10, offset=20)
 cdr = c.cdr.list_for_user_csv(user_uuid='my-user')
 cdr = c.cdr.list_from_user_csv()  # with user token only
+
+cdr = c.cdr.get_by_id(1234)
+cdr = c.cdr.get_by_id_csv(1234)
 ```
 
 ## Tests

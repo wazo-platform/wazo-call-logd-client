@@ -6,6 +6,17 @@ from wazo_call_logd_client.command import CallLogdCommand
 
 
 class CDRCommand(CallLogdCommand):
+
+    def get_by_id(self, cdr_id):
+        r = self.session.get(self._client.url('cdr', cdr_id))
+        self.raise_from_response(r)
+        return r.json()
+
+    def get_by_id_csv(self, cdr_id):
+        r = self.session.get(self._client.url('cdr', cdr_id), headers={'Accept': 'text/csv; charset=utf-8'})
+        self.raise_from_response(r)
+        return r.text
+
     def list(self, **params):
         if 'from_' in params:
             params['from'] = params.pop('from_')
