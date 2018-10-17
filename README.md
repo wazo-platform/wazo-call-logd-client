@@ -20,6 +20,8 @@ cdr = c.cdr.list_from_user_csv()  # with user token only
 
 cdr = c.cdr.get_by_id(1234)
 cdr = c.cdr.get_by_id_csv(1234)
+
+status = c.status.get()
 ```
 
 ## Tests

@@ -22,6 +22,7 @@ setup(
     entry_points={
         'wazo_call_logd_client.commands': [
             'cdr = wazo_call_logd_client.commands.cdr:CDRCommand',
+            'status = wazo_call_logd_client.commands.status:StatusCommand',
         ],
     }
 )
