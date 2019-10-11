@@ -19,7 +19,7 @@ Depends: ${python:Depends},
          ${misc:Depends},
          python-requests,
          python-stevedore,
-         xivo-lib-rest-client
+         wazo-lib-rest-client
 Conflicts: xivo-call-logs-client
 Replaces: xivo-call-logs-client
 Provides: xivo-call-logs-client
@@ -35,7 +35,7 @@ Depends: ${python:Depends},
          ${misc:Depends},
          python3-requests,
          python3-stevedore,
-         xivo-lib-rest-client-python3
+         wazo-lib-rest-client-python3
 Description: wazo-call-logd client library - Python 3
  Wazo is a system based on a powerful IPBX, to bring an easy to
  install solution for telephony and related services.
