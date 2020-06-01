@@ -31,7 +31,7 @@ Description: wazo-call-logd client library - Python 2
 Package: wazo-call-logd-client-python3
 Architecture: all
 Section: python
-Depends: ${python:Depends},
+Depends: ${python3:Depends},
          ${misc:Depends},
          python3-requests,
          python3-stevedore,
