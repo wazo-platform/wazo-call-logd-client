@@ -21,6 +21,7 @@ setup(
 
     entry_points={
         'wazo_call_logd_client.commands': [
+            'agent_statistics = wazo_call_logd_client.commands.agent_statistics:AgentStatisticsCommand',
             'cdr = wazo_call_logd_client.commands.cdr:CDRCommand',
             'queue_statistics = wazo_call_logd_client.commands.queue_statistics:QueueStatisticsCommand',
             'status = wazo_call_logd_client.commands.status:StatusCommand',
