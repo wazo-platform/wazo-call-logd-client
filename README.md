@@ -1,5 +1,4 @@
-wazo-call-logd-client
-===================
+# wazo-call-logd-client
 
 A python library to connect to wazo-call-logd. HTTPS is used by default. Certificates are verified by default. To disable certificate verification, use the verify_certificate argument when instantiating the client.
 
@@ -47,10 +46,9 @@ all_agent_statistics = c.agent_statistics.list(
 
 ## Tests
 
-Running unit tests
-------------------
+### Running unit tests
 
-```
+```shell
 pip install tox
 tox --recreate -e py27
 ```
