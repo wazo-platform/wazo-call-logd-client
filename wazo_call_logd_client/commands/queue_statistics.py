@@ -22,3 +22,13 @@ class QueueStatisticsCommand(CallLogdCommand):
         r = self.session.get(self._client.url('queues', 'statistics'), params=params)
         self.raise_from_response(r)
         return r.json()
+
+    def get_qos_by_id(self, queue_id, **params):
+        if 'from_' in params:
+            params['from'] = params.pop('from_')
+
+        r = self.session.get(
+            self._client.url('queues', queue_id, 'statistics', 'qos'), params=params
+        )
+        self.raise_from_response(r)
+        return r.json()
