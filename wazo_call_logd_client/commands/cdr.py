@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2017 The Wazo Authors  (see AUTHORS file)
+# Copyright 2017-2021 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from wazo_call_logd_client.command import CallLogdCommand
@@ -64,3 +64,13 @@ class CDRCommand(CallLogdCommand):
         r = self.session.get(self._client.url('users', 'me', 'cdr'), params=params, headers={'Accept': 'text/csv; charset=utf-8'})
         self.raise_from_response(r)
         return r.text
+
+    def get_recording_media(self, cdr_id, recording_uuid, **kwargs):
+        tenant_uuid = kwargs.pop('tenant_uuid', None) or self._client.tenant()
+        headers = {'Accept': '*/*'}
+        if tenant_uuid:
+            headers['Wazo-Tenant'] = tenant_uuid
+        url = self._client.url('cdr', cdr_id, 'recordings', recording_uuid, 'media')
+        r = self.session.get(url, headers=headers)
+        self.raise_from_response(r)
+        return r
