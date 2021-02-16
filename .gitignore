@@ -1,1 +1,9 @@
+.coverage
+*.egg-info
+.gitignore
+.tox
 *.pyc
+coverage.xml
+nosetests.xml
+pycodestyle.txt
+pylint.txt
