@@ -74,3 +74,12 @@ class CDRCommand(CallLogdCommand):
         r = self.session.get(url, headers=headers)
         self.raise_from_response(r)
         return r
+
+    def delete_recording_media(self, cdr_id, recording_uuid, **kwargs):
+        tenant_uuid = kwargs.pop('tenant_uuid', None) or self._client.tenant()
+        headers = {}
+        if tenant_uuid:
+            headers['Wazo-Tenant'] = tenant_uuid
+        url = self._client.url('cdr', cdr_id, 'recordings', recording_uuid, 'media')
+        r = self.session.delete(url, headers=headers)
+        self.raise_from_response(r)
