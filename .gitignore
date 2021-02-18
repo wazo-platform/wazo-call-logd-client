@@ -1,8 +1,8 @@
-.coverage
 *.egg-info
+*.pyc
+.coverage
 .gitignore
 .tox
-*.pyc
 coverage.xml
 nosetests.xml
 pycodestyle.txt
