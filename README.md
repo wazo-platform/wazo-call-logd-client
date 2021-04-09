@@ -78,3 +78,4 @@ c = Client(...)
 
 c.foo.bar()  # bar is a method of the FooCommand class
 ```
+
