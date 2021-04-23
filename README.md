@@ -28,6 +28,9 @@ c.cdr.delete_cdrs_recording_media([1234, 5678])
 
 status = c.status.get()
 
+retention = c.retention.get()
+c.retention.update(cdr_days=42, recording_days=42)
+
 queue_statistics = c.queue_statistics.get_by_id(
     queue_id=123, from_='2020-03', until='2020-04', qos_threshold='10',
     day_start_time='08:00', day_end_time='17:00', interval='day'
