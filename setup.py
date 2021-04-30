@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright 2017-2020 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2017-2021 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from setuptools import setup
@@ -24,6 +24,7 @@ setup(
             'agent_statistics = wazo_call_logd_client.commands.agent_statistics:AgentStatisticsCommand',
             'cdr = wazo_call_logd_client.commands.cdr:CDRCommand',
             'queue_statistics = wazo_call_logd_client.commands.queue_statistics:QueueStatisticsCommand',
+            'retention = wazo_call_logd_client.commands.retention:RetentionCommand',
             'status = wazo_call_logd_client.commands.status:StatusCommand',
         ],
     }
