@@ -23,6 +23,7 @@ setup(
         'wazo_call_logd_client.commands': [
             'agent_statistics = wazo_call_logd_client.commands.agent_statistics:AgentStatisticsCommand',
             'cdr = wazo_call_logd_client.commands.cdr:CDRCommand',
+            'config = wazo_call_logd_client.commands.config:ConfigCommand',
             'queue_statistics = wazo_call_logd_client.commands.queue_statistics:QueueStatisticsCommand',
             'retention = wazo_call_logd_client.commands.retention:RetentionCommand',
             'status = wazo_call_logd_client.commands.status:StatusCommand',
