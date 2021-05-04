@@ -51,6 +51,8 @@ agent_statistics = c.agent_statistics.get_by_id(
 all_agent_statistics = c.agent_statistics.list(
     from_='2020-03', until='2020-04', day_start_time='08:00', day_end_time='17:00'
 )
+
+config = c.config.get()
 ```
 
 ## Tests
