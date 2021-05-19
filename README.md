@@ -26,6 +26,9 @@ c.cdr.delete_recording_media(1234, 'my-recording-uuid')
 
 c.cdr.delete_cdrs_recording_media([1234, 5678])
 
+export = c.export.get('export-uuid')
+export_file = c.export.download('export-uuid')
+
 status = c.status.get()
 
 retention = c.retention.get()
