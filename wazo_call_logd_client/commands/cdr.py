@@ -93,3 +93,18 @@ class CDRCommand(CallLogdCommand):
         url = self._client.url('cdr', cdr_id, 'recordings', recording_uuid, 'media')
         r = self.session.delete(url, headers=headers)
         self.raise_from_response(r)
+
+    def export_recording_media(self, cdr_ids=None, **params):
+        if 'from_' in params:
+            params['from'] = params.pop('from_')
+        tenant_uuid = params.pop('tenant_uuid', None) or self._client.tenant()
+        headers = {}
+        if tenant_uuid:
+            headers['Wazo-Tenant'] = tenant_uuid
+        body = {}
+        if cdr_ids:
+            body['cdr_ids'] = cdr_ids
+        url = self._client.url('cdr', 'recordings', 'media', 'export')
+        r = self.session.post(url, json=body, params=params, headers=headers)
+        self.raise_from_response(r)
+        return r.json()
