@@ -58,6 +58,13 @@ all_agent_statistics = c.agent_statistics.list(
 )
 
 config = c.config.get()
+
+config_patch = {
+    'op': 'replace',
+    'path': '/debug',
+    'value': True,
+}
+c.config.patch(config_patch)
 ```
 
 ## Tests

@@ -14,3 +14,11 @@ class ConfigCommand(BaseCommand):
         r = self.session.get(url, headers=headers)
         self.raise_from_response(r)
         return r.json()
+
+    def patch(self, config_patch):
+        headers = self._get_headers(write=True)
+        r = self.session.patch(
+            self._client.url('config'), headers=headers, json=config_patch
+        )
+        self.raise_from_response(r)
+        return r.json()
