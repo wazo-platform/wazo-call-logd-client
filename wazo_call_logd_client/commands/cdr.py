@@ -8,12 +8,15 @@ from wazo_call_logd_client.command import CallLogdCommand
 class CDRCommand(CallLogdCommand):
 
     def get_by_id(self, cdr_id):
-        r = self.session.get(self._client.url('cdr', cdr_id))
+        url = self._client.url('cdr', cdr_id)
+        r = self.session.get(url)
         self.raise_from_response(r)
         return r.json()
 
     def get_by_id_csv(self, cdr_id):
-        r = self.session.get(self._client.url('cdr', cdr_id), headers={'Accept': 'text/csv; charset=utf-8'})
+        headers = {'Accept': 'text/csv; charset=utf-8'}
+        url = self._client.url('cdr', cdr_id)
+        r = self.session.get(url, headers=headers)
         self.raise_from_response(r)
         return r.text
 
@@ -21,7 +24,8 @@ class CDRCommand(CallLogdCommand):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(self._client.url('cdr'), params=params)
+        url = self._client.url('cdr')
+        r = self.session.get(url, params=params)
         self.raise_from_response(r)
         return r.json()
 
@@ -29,7 +33,9 @@ class CDRCommand(CallLogdCommand):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(self._client.url('cdr'), params=params, headers={'Accept': 'text/csv; charset=utf-8'})
+        headers = {'Accept': 'text/csv; charset=utf-8'}
+        url = self._client.url('cdr')
+        r = self.session.get(url, params=params, headers=headers)
         self.raise_from_response(r)
         return r.text
 
@@ -37,7 +43,8 @@ class CDRCommand(CallLogdCommand):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(self._client.url('users', user_uuid, 'cdr'), params=params)
+        url = self._client.url('users', user_uuid, 'cdr')
+        r = self.session.get(url, params=params)
         self.raise_from_response(r)
         return r.json()
 
@@ -45,7 +52,9 @@ class CDRCommand(CallLogdCommand):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(self._client.url('users', user_uuid, 'cdr'), params=params, headers={'Accept': 'text/csv; charset=utf-8'})
+        headers = {'Accept': 'text/csv; charset=utf-8'}
+        url = self._client.url('users', user_uuid, 'cdr')
+        r = self.session.get(url, params=params, headers=headers)
         self.raise_from_response(r)
         return r.text
 
@@ -53,7 +62,8 @@ class CDRCommand(CallLogdCommand):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(self._client.url('users', 'me', 'cdr'), params=params)
+        url = self._client.url('users', 'me', 'cdr')
+        r = self.session.get(url, params=params)
         self.raise_from_response(r)
         return r.json()
 
@@ -61,7 +71,9 @@ class CDRCommand(CallLogdCommand):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(self._client.url('users', 'me', 'cdr'), params=params, headers={'Accept': 'text/csv; charset=utf-8'})
+        headers = {'Accept': 'text/csv; charset=utf-8'}
+        url = self._client.url('users', 'me', 'cdr')
+        r = self.session.get(url, params=params, headers=headers)
         self.raise_from_response(r)
         return r.text
 
