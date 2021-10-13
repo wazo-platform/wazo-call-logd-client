@@ -10,7 +10,8 @@ class BaseCommand(CallLogdCommand):
 
     def _get_headers(self, **kwargs):
         headers = dict(self._headers)
-        tenant_uuid = kwargs.pop('tenant_uuid', self._client.tenant())
+        # The requests session will use self.tenant_uuid by default
+        tenant_uuid = kwargs.pop('tenant_uuid', None)
         if tenant_uuid:
             headers['Wazo-Tenant'] = tenant_uuid
         return headers
