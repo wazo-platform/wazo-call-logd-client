@@ -15,7 +15,7 @@ class RetentionCommand(BaseCommand):
         return r.json()
 
     def update(self, tenant_uuid=None, **body):
-        headers = self._get_headers(write=True, tenant_uuid=tenant_uuid)
+        headers = self._get_headers(tenant_uuid=tenant_uuid)
         url = self._client.url('retention')
         r = self.session.put(url, json=body, headers=headers)
         self.raise_from_response(r)

@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
-# Copyright 2020 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2020-2021 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from wazo_call_logd_client.command import CallLogdCommand
+from .helpers.base import BaseCommand
 
 
-class QueueStatisticsCommand(CallLogdCommand):
+class QueueStatisticsCommand(BaseCommand):
 
     def get_by_id(self, queue_id, **params):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(self._client.url('queues', queue_id, 'statistics'), params=params)
+        headers = self._get_headers()
+        url = self._client.url('queues', queue_id, 'statistics')
+        r = self.session.get(url, params=params, headers=headers)
         self.raise_from_response(r)
         return r.json()
 
@@ -19,7 +21,9 @@ class QueueStatisticsCommand(CallLogdCommand):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(self._client.url('queues', 'statistics'), params=params)
+        headers = self._get_headers()
+        url = self._client.url('queues', 'statistics')
+        r = self.session.get(url, params=params, headers=headers)
         self.raise_from_response(r)
         return r.json()
 
@@ -27,8 +31,8 @@ class QueueStatisticsCommand(CallLogdCommand):
         if 'from_' in params:
             params['from'] = params.pop('from_')
 
-        r = self.session.get(
-            self._client.url('queues', queue_id, 'statistics', 'qos'), params=params
-        )
+        headers = self._get_headers()
+        url = self._client.url('queues', queue_id, 'statistics', 'qos')
+        r = self.session.get(url, params=params, headers=headers)
         self.raise_from_response(r)
         return r.json()

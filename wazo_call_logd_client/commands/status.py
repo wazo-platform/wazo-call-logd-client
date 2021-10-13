@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2018-2021 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from wazo_call_logd_client.command import CallLogdCommand
+from .helpers.base import BaseCommand
 
 
-class StatusCommand(CallLogdCommand):
+class StatusCommand(BaseCommand):
 
     def get(self):
-        r = self.session.get(self._client.url('status'))
+        headers = self._get_headers()
+        url = self._client.url('status')
+        r = self.session.get(url, headers=headers)
         self.raise_from_response(r)
         return r.json()
