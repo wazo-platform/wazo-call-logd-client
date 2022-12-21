@@ -1,12 +1,8 @@
-# -*- coding: utf-8 -*-
-# Copyright 2017 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2017-2022 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from hamcrest import assert_that
-from hamcrest import calling
-from hamcrest import equal_to
-from hamcrest import raises
-from mock import Mock
+from hamcrest import assert_that, calling, equal_to, raises
+from unittest.mock import Mock
 from unittest import TestCase
 
 from ..exceptions import CallLogdError

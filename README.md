@@ -73,7 +73,7 @@ c.config.patch(config_patch)
 
 ```shell
 pip install tox
-tox --recreate -e py27
+tox --recreate -e py37
 ```
 
 ## How to implement a new command

@@ -1,17 +1,12 @@
-# -*- coding: utf-8 -*-
-# Copyright 2017 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2017-2022 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from hamcrest import assert_that
-from hamcrest import calling
-from hamcrest import raises
-from mock import Mock
-from mock import patch
+from hamcrest import assert_that, calling, raises
+from unittest.mock import Mock, patch
 from unittest import TestCase
 
 from ..command import CallLogdCommand
-from ..exceptions import CallLogdServiceUnavailable
-from ..exceptions import CallLogdError
+from ..exceptions import CallLogdServiceUnavailable, CallLogdError
 
 SOME_ERROR_BODY = {
     'message': 'some message',
