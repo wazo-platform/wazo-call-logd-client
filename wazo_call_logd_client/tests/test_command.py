@@ -1,17 +1,12 @@
-# -*- coding: utf-8 -*-
-# Copyright 2017 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2017-2022 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from hamcrest import assert_that
-from hamcrest import calling
-from hamcrest import raises
-from mock import Mock
-from mock import patch
+from hamcrest import assert_that, calling, raises
+from unittest.mock import Mock, patch
 from unittest import TestCase
 
 from ..command import CallLogdCommand
-from ..exceptions import CallLogdServiceUnavailable
-from ..exceptions import CallLogdError
+from ..exceptions import CallLogdServiceUnavailable, CallLogdError
 
 SOME_ERROR_BODY = {
     'message': 'some message',
@@ -22,7 +17,6 @@ SOME_ERROR_BODY = {
 
 
 class TestCallLogdCommand(TestCase):
-
     @patch('wazo_call_logd_client.command.HTTPCommand.raise_from_response')
     def test_raise_from_response_no_error(self, parent_raise):
         response = Mock(status_code=200)
@@ -38,7 +32,7 @@ class TestCallLogdCommand(TestCase):
 
         assert_that(
             calling(CallLogdCommand.raise_from_response).with_args(response),
-            raises(CallLogdServiceUnavailable)
+            raises(CallLogdServiceUnavailable),
         )
 
     def test_raise_from_response_default_error(self):
@@ -47,5 +41,5 @@ class TestCallLogdCommand(TestCase):
 
         assert_that(
             calling(CallLogdCommand.raise_from_response).with_args(response),
-            raises(CallLogdError)
+            raises(CallLogdError),
         )

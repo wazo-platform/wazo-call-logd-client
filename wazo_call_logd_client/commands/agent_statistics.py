@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
-# Copyright 2020-2021 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2020-2022 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from .helpers.base import BaseCommand
 
 
 class AgentStatisticsCommand(BaseCommand):
-
     def get_by_id(self, agent_id, **params):
         if 'from_' in params:
             params['from'] = params.pop('from_')
