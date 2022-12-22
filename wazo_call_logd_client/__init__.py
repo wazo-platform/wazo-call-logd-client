@@ -2,3 +2,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from wazo_call_logd_client.client import Client
+
+__all__ = [Client]

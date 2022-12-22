@@ -5,7 +5,6 @@ from .helpers.base import BaseCommand
 
 
 class RetentionCommand(BaseCommand):
-
     def get(self, tenant_uuid=None):
         headers = self._get_headers(tenant_uuid=tenant_uuid)
         url = self._client.url('retention')

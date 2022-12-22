@@ -7,7 +7,6 @@ from .exceptions import CallLogdError, CallLogdServiceUnavailable, InvalidCallLo
 
 
 class CallLogdCommand(HTTPCommand):
-
     @staticmethod
     def raise_from_response(response):
         if response.status_code == 503:

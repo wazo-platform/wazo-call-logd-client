@@ -5,7 +5,6 @@ from .helpers.base import BaseCommand
 
 
 class StatusCommand(BaseCommand):
-
     def get(self):
         headers = self._get_headers()
         url = self._client.url('status')

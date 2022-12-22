@@ -5,7 +5,6 @@ from .helpers.base import BaseCommand
 
 
 class AgentStatisticsCommand(BaseCommand):
-
     def get_by_id(self, agent_id, **params):
         if 'from_' in params:
             params['from'] = params.pop('from_')

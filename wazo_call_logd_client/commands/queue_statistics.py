@@ -5,7 +5,6 @@ from .helpers.base import BaseCommand
 
 
 class QueueStatisticsCommand(BaseCommand):
-
     def get_by_id(self, queue_id, **params):
         if 'from_' in params:
             params['from'] = params.pop('from_')

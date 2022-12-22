@@ -5,7 +5,6 @@ from requests import HTTPError
 
 
 class CallLogdError(HTTPError):
-
     def __init__(self, response):
         try:
             body = response.json()

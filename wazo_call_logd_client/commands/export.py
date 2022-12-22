@@ -5,7 +5,6 @@ from .helpers.base import BaseCommand
 
 
 class ExportCommand(BaseCommand):
-
     def get(self, export_uuid, tenant_uuid=None):
         headers = self._get_headers(tenant_uuid=tenant_uuid)
         url = self._client.url('exports', export_uuid)

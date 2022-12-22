@@ -9,17 +9,6 @@ class Client(BaseClient):
     namespace = 'wazo_call_logd_client.commands'
 
     def __init__(
-        self,
-        host,
-        port=443,
-        prefix='/api/call-logd',
-        version='1.0',
-        **kwargs
+        self, host, port=443, prefix='/api/call-logd', version='1.0', **kwargs
     ):
-        super().__init__(
-            host=host,
-            port=port,
-            prefix=prefix,
-            version=version,
-            **kwargs
-        )
+        super().__init__(host=host, port=port, prefix=prefix, version=version, **kwargs)

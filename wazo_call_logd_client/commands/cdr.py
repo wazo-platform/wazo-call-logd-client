@@ -5,7 +5,6 @@ from .helpers.base import BaseCommand
 
 
 class CDRCommand(BaseCommand):
-
     def get_by_id(self, cdr_id):
         headers = self._get_headers()
         url = self._client.url('cdr', cdr_id)

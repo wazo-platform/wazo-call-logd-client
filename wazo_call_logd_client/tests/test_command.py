@@ -17,7 +17,6 @@ SOME_ERROR_BODY = {
 
 
 class TestCallLogdCommand(TestCase):
-
     @patch('wazo_call_logd_client.command.HTTPCommand.raise_from_response')
     def test_raise_from_response_no_error(self, parent_raise):
         response = Mock(status_code=200)
@@ -33,7 +32,7 @@ class TestCallLogdCommand(TestCase):
 
         assert_that(
             calling(CallLogdCommand.raise_from_response).with_args(response),
-            raises(CallLogdServiceUnavailable)
+            raises(CallLogdServiceUnavailable),
         )
 
     def test_raise_from_response_default_error(self):
@@ -42,5 +41,5 @@ class TestCallLogdCommand(TestCase):
 
         assert_that(
             calling(CallLogdCommand.raise_from_response).with_args(response),
-            raises(CallLogdError)
+            raises(CallLogdError),
         )
