@@ -1,11 +1,10 @@
-# Copyright 2021 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2021-2023 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from wazo_call_logd_client.command import CallLogdCommand
 
 
 class BaseCommand(CallLogdCommand):
-
     _headers = {'Accept': 'application/json'}
 
     def _get_headers(self, **kwargs):
