@@ -1,12 +1,12 @@
-# Copyright 2017-2022 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2017-2023 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from hamcrest import assert_that, calling, equal_to, raises
-from unittest.mock import Mock
 from unittest import TestCase
+from unittest.mock import Mock
 
-from ..exceptions import CallLogdError
-from ..exceptions import InvalidCallLogdError
+from hamcrest import assert_that, calling, equal_to, raises
+
+from ..exceptions import CallLogdError, InvalidCallLogdError
 
 
 class TestCallLogdError(TestCase):
