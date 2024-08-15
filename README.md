@@ -21,6 +21,7 @@ cdr = c.cdr.get_by_id(1234)
 cdr = c.cdr.get_by_id_csv(1234)
 
 media = c.cdr.get_recording_media(1234, 'my-recording-uuid')
+media = c.cdr.get_recording_media_from_user(1234, 'my-recording-uuid')
 
 c.cdr.delete_recording_media(1234, 'my-recording-uuid')
 
