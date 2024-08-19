@@ -1,4 +1,4 @@
-# Copyright 2017-2022 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2017-2024 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from .helpers.base import BaseCommand
@@ -90,6 +90,16 @@ class CDRCommand(BaseCommand):
         headers = self._get_headers(**kwargs)
         headers['Accept'] = '*/*'
         url = self._client.url('cdr', cdr_id, 'recordings', recording_uuid, 'media')
+        r = self.session.get(url, headers=headers)
+        self.raise_from_response(r)
+        return r
+
+    def get_recording_media_from_user(self, cdr_id, recording_uuid, **kwargs):
+        headers = self._get_headers(**kwargs)
+        headers['Accept'] = '*/*'
+        url = self._client.url(
+            'users', 'me', 'cdr', cdr_id, 'recordings', recording_uuid, 'media'
+        )
         r = self.session.get(url, headers=headers)
         self.raise_from_response(r)
         return r
