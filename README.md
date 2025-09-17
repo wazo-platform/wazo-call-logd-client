@@ -74,7 +74,7 @@ c.config.patch(config_patch)
 
 ```shell
 pip install tox
-tox --recreate -e py39
+tox --recreate -e py311
 ```
 
 ## How to implement a new command
