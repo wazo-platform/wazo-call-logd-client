@@ -39,9 +39,7 @@ class VoicemailTranscriptionCommand(BaseCommand):
             params['from'] = params.pop('from_')
 
         headers = self._get_headers()
-        url = self._client.url(
-            'users', user_uuid, 'voicemails', 'transcriptions'
-        )
+        url = self._client.url('users', user_uuid, 'voicemails', 'transcriptions')
         r = self.session.get(url, params=params, headers=headers)
         self.raise_from_response(r)
         return r.json()
