@@ -60,6 +60,9 @@ all_agent_statistics = c.agent_statistics.list(
 
 config = c.config.get()
 
+transcriptions = c.voicemail_transcription.list_transcriptions()
+transcriptions = c.voicemail_transcription.list_transcriptions(voicemail_id='42')
+
 config_patch = {
     'op': 'replace',
     'path': '/debug',
