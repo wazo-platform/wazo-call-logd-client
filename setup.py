@@ -21,6 +21,7 @@ setup(
             'queue_statistics = wazo_call_logd_client.commands.queue_statistics:QueueStatisticsCommand',  # noqa
             'retention = wazo_call_logd_client.commands.retention:RetentionCommand',
             'status = wazo_call_logd_client.commands.status:StatusCommand',
+            'voicemail_transcription = wazo_call_logd_client.commands.voicemail_transcription:VoicemailTranscriptionCommand',  # noqa
         ],
     },
 )
